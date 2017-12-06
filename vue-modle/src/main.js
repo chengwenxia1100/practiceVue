@@ -6,6 +6,9 @@ import VueResource from 'vue-resource'
 import App from './App'
 import Custorm from './components/Custorm'
 import About from './components/About'
+import Add from './components/Add'
+import CustormDetails from './components/CustormDetails'
+import Edit from './components/Edit'
 
 Vue.config.productionTip = false
 
@@ -18,7 +21,10 @@ const router= new VueRouter({
 	base:__dirname,
 	routes:[
 		{path:"/",component:Custorm},
-		{path:"/about",component:About}
+		{path:"/about",component:About},
+		{path:"/add",component:Add},
+		{path:"/custorm/:id",component:CustormDetails},
+		{path:"/edit/:id",component:Edit}
 	]
 })
 
@@ -43,6 +49,9 @@ new Vue({
 	          <ul class="nav navbar-nav">
 	            <li><router-link to="/">主页</router-link></li>
 	            <li><router-link to="/about">关于我们</router-link></li>
+	          </ul>
+	          <ul class="nav navbar-nav navbar-right">
+	            <li><router-link to="/add">添加用户</router-link></li>
 	          </ul>
 	        </div><!--/.nav-collapse -->
 	      </div>
